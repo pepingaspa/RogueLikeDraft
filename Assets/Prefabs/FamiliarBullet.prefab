@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 247992838017186}
   - component: {fileID: 3003423867983487475}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: FamiliarBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 7ba3b2687ec3b5a4c8f906a0eec30947, type: 3}
-  m_Color: {r: 0.91764706, g: 0.2352941, b: 0.8643321, a: 1}
+  m_Color: {r: 0.4339623, g: 0.13673905, b: 0.41004783, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

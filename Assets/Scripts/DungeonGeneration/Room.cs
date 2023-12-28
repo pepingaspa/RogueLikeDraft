@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,13 +27,13 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(RoomController.instance == null)
+        if (RoomController.instance == null)
         {
             return;
         }
 
         Door[] arrayDoors = GetComponentsInChildren<Door>();
-        foreach(Door d in arrayDoors)
+        foreach (Door d in arrayDoors)
         {
             doors.Add(d);
             switch (d.doorType)
@@ -60,7 +59,7 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(name.Contains("End") && !updatedDoors)
+        if (name.Contains("End") && !updatedDoors)
         {
             RemoveUnconnectedDoors();
             updatedDoors = true;
@@ -70,12 +69,12 @@ public class Room : MonoBehaviour
 
     public void RemoveUnconnectedDoors()
     {
-        foreach(Door door in doors)
+        foreach (Door door in doors)
         {
             switch (door.doorType)
             {
                 case Door.DoorType.right:
-                    if(GetRight() == null)
+                    if (GetRight() == null)
                     {
                         door.gameObject.SetActive(false);
                     }
@@ -103,8 +102,9 @@ public class Room : MonoBehaviour
         }
     }
 
-    public Room GetRight() {
-        if(RoomController.instance.DoesRoomExist(x + 1, y))
+    public Room GetRight()
+    {
+        if (RoomController.instance.DoesRoomExist(x + 1, y))
         {
             return RoomController.instance.FindRoom(x + 1, y);
         }
@@ -150,7 +150,7 @@ public class Room : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
         }
