@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
 
         rigidBody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
-        collectedText.text = "Coins collected : " + collectedAmount; 
+        collectedText.text = collectedAmount + ""; 
     }
 
     void Shoot(float x, float y)
