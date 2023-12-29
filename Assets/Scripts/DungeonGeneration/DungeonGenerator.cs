@@ -13,9 +13,7 @@ public class DungeonGenerator : MonoBehaviour
     {
         dungeonRooms = DungeonCrawlerController.GenerateDungeon(dungeonGenerationData);
         SpawnRooms(dungeonRooms);
-
-        foreach (Room room in RoomController.instance.loadedRooms)
-            room.RemoveUnconnectedDoors();
+            
     }
 
     private void SpawnRooms(IEnumerable<Vector2Int> rooms)
@@ -23,8 +21,8 @@ public class DungeonGenerator : MonoBehaviour
         RoomController.instance.LoadRoom("Start", 0, 0);
         foreach(Vector2Int roomLocation in rooms)
         {
-            //TODO : ajout plusieurs types de salle ici avec des strings différentes (et les créer)
-            RoomController.instance.LoadRoom("Empty", roomLocation.x, roomLocation.y);
+            //TODO : ajout plusieurs types de salle ici (avec random ?) . CF GetRandomRoomName
+            RoomController.instance.LoadRoom(RoomController.instance.GetRandomRoomName(), roomLocation.x, roomLocation.y);
         }
     }
 

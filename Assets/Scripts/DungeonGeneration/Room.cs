@@ -59,7 +59,7 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (name.Contains("End") && !updatedDoors)
+        if ((name.Contains("End") || name.Contains("Start")) && !updatedDoors)
         {
             RemoveUnconnectedDoors();
             updatedDoors = true;
